@@ -14,4 +14,7 @@ rule token = parse
 | '(' { GPAREN }
 | ')' { DPAREN }
 | eof { raise Eof }
+| ['\n'] { raise Eof }
+| ';' {PT_VIRG}
 | _ { raise TokenInconu }
+
