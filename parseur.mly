@@ -5,7 +5,7 @@
 %nonassoc UMOINS
 
 
-%type <int> main expression
+%type <unit> main expression
 %start main
 %%
 main:
