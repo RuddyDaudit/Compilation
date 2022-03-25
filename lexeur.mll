@@ -5,8 +5,7 @@ exception Eof
 exception TokenInconu
 }
 rule token = parse
-[' ' '\t'] { token lexbuf }
-| ['\n'] { EOL }
+[' ' '\t' '\n'] { token lexbuf }
 | ['0'-'9']+ { NOMBRE}
 | '+' { PLUS }
 | '-' { MOINS }
@@ -14,7 +13,6 @@ rule token = parse
 | '(' { GPAREN }
 | ')' { DPAREN }
 | eof { raise Eof }
-| ['\n'] { raise Eof }
 | ';' {PT_VIRG}
 | _ { raise TokenInconu }
 
